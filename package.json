@@ -1,0 +1,30 @@
+{
+  "name": "my-e-commerce-shop",
+  "version": "1.0.0",
+  "description": "Aa back end for my e-commerce website that uses the latest technologies so my company can compete with other e-commerce companies",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roxywasiak/my-e-commerce-shop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/roxywasiak/my-e-commerce-shop/issues"
+  },
+  "homepage": "https://github.com/roxywasiak/my-e-commerce-shop#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "insomnia": "^0.0.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.21.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.18"
+  }
+}
