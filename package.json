@@ -4,6 +4,9 @@
   "description": "A back end for my e-commerce website that uses the latest technologies so my company can compete with other e-commerce companies",
   "main": "index.js",
   "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "seed": "node src/server/js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
