@@ -1,7 +1,7 @@
 {
   "name": "my-e-commerce-shop",
   "version": "1.0.0",
-  "description": "Aa back end for my e-commerce website that uses the latest technologies so my company can compete with other e-commerce companies",
+  "description": "A back end for my e-commerce website that uses the latest technologies so my company can compete with other e-commerce companies",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
