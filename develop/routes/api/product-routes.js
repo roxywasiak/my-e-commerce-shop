@@ -1,19 +1,59 @@
 const router = require("express").Router();
 const { Product, Category, Tag, ProductTag } = require("../../models");
 
+const PRODUCT_ATTRIBUTES = ["id", "product_name", "price", "stock"];
+
 // The `/api/products` endpoint
 
 // get all products
-router.get("/", (req, res) => {
+router.get(
+  "/",
   // find all products
-  // be sure to include its associated Category and Tag data
-});
+  (getAllProducts = async (req, res) => {
+    try {
+      // be sure to include its associated Products
+      const products = await Product.findAll({
+        // be sure to include its associated Category and Tag data
+        attributes: PRODUCT_ATTRIBUTES,
+        include: [{ model: Category }, { model: Tag }],
+      });
+      return res.json(products);
+    } catch (error) {
+      console.log(`[ERROR]: Failed to get all Products | ${error.message}`);
+      return res.status(500).json({ success: false, error: error.message });
+    }
+  })
+);
 
 // get one product
 router.get("/:id", (req, res) => {
   // find a single product by its `id`
-  // be sure to include its associated Category and Tag data
-});
+ 
+  (Product = async (req, res) => {
+    // find one category by its `id` value
+    try {
+      // be sure to include its associated Products
+       const  productId = await Product.findByPk(req.params.id, {
+        attributes: PRODUCT_ATTRIBUTES,
+        include: [{ model: Product} , {Category, Tag} ],
+      });
+
+      if (productId) {
+        // send the products in the response
+        return res.json(productId);
+      }
+      return res
+        .status(404)
+        .json({ success: false, message: "Product does not exist" });
+    } catch (error) {
+      console.log(`[ERROR]: Failed to get the Product | ${error.message}`);
+      return res.status(500).json({ success: false, error: error.message });
+    }
+  })
+  );
+
+
+
 
 // create new product
 router.post("/", (req, res) => {

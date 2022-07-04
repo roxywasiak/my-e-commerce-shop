@@ -35,7 +35,7 @@ router.get(
       return res.json(categories);
     } catch (error) {
       console.log(`[ERROR]: Failed to get all categories | ${error.message}`);
-      return res.status(500).json({ success: false, error: error.message });
+develop/routes/api/product-routes.js      return res.status(500).json({ success: false, error: error.message });
     }
   })
 );
@@ -138,9 +138,8 @@ router.delete(
   return res.status(500).json({ success: false, error: error.message });
 }
   
-  }
+})
 );
-
 
 
 module.exports = router;
