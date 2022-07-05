@@ -25,7 +25,7 @@ const cleanupPayload = (payload) => {
 // The `/api/categories` endpoint
 router.get(
   "/",
-  (Category = async (req, res) => {
+  (getAllCategories = async (req, res) => {
     // find all categories
     try {
       // be sure to include its associated Products
@@ -35,14 +35,14 @@ router.get(
       return res.json(categories);
     } catch (error) {
       console.log(`[ERROR]: Failed to get all categories | ${error.message}`);
-develop/routes/api/product-routes.js      return res.status(500).json({ success: false, error: error.message });
+     return res.status(500).json({ success: false, error: error.message });
     }
   })
 );
 
 router.get(
   "/:id",
-  (Category = async (req, res) => {
+  (getCategory = async (req, res) => {
     // find one category by its `id` value
     try {
       // be sure to include its associated Products
@@ -133,13 +133,13 @@ router.delete(
 
    // send response
     return res.json({ success: true });
-  } catch (error) {
+  } catch  (error) {
   console.log(`[ERROR]: Failed to delete Category | ${error.message}`);
   return res.status(500).json({ success: false, error: error.message });
 }
-  
-})
-);
+  }
+));
+
 
 
 module.exports = router;
