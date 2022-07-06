@@ -23,9 +23,7 @@ const cleanupPayload = (payload) => {
 };
 
 // The `/api/categories` endpoint
-router.get(
-  "/",
-  (getAllCategories = async (req, res) => {
+  const getAllCategories = async (req, res) => {
     // find all categories
     try {
       // be sure to include its associated Products
@@ -37,12 +35,11 @@ router.get(
       console.log(`[ERROR]: Failed to get all categories | ${error.message}`);
      return res.status(500).json({ success: false, error: error.message });
     }
-  })
-);
+  };
 
-router.get(
-  "/:id",
-  (getCategory = async (req, res) => {
+
+
+  const getCategory = async (req, res) => {
     // find one category by its `id` value
     try {
       // be sure to include its associated Products
@@ -61,12 +58,10 @@ router.get(
       console.log(`[ERROR]: Failed to get the Category ID | ${error.message}`);
       return res.status(500).json({ success: false, error: error.message });
     }
-  })
-);
+  };
 
-router.post(
-  "/",
-  (newCategory = async (req, res) => {
+
+  const newCategory = async (req, res) => {
     // create a new category
     try {
       // get new category data from request body
@@ -79,12 +74,11 @@ router.post(
       console.log(`[ERROR]: Failed to create new category | ${error.message}`);
       return res.status(500).json({ success: false, error: error.message });
     }
-  })
-);
+  };
 
-router.put(
-  "/:id",
-  (updateCategory = async (req, res) => {
+
+
+  const updateCategory = async (req, res) => {
     // update a category by its `id` value
     try {
       // get the fields to update from the req body
@@ -114,12 +108,10 @@ router.put(
       console.log(`[ERROR]: Failed to update the Category | ${error.message}`);
       return res.status(500).json({ success: false, error: error.message });
     }
-  })
-);
+  };
 
-router.delete(
-  "/:id",
-(deleteCategory = async (req, res) => {
+
+const deleteCategory = async (req, res) => {
   // delete a category by its `id` value
   try {
 
@@ -138,7 +130,8 @@ router.delete(
   return res.status(500).json({ success: false, error: error.message });
 }
   }
-));
+};
+
 
 
 
