@@ -92,7 +92,7 @@ try {
 
 
 // update product
-const createProduct =  async (req, res) => {
+const updateProduct =  async (req, res) => {
   // update product data
   Product.update(req.body, {
     where: {
@@ -138,9 +138,15 @@ const deleteProduct = async (req, res) => {
   try {
 
     
-    const deleteProductById = 
-  }
+    const product = {await 
+  };
 
+
+
+module.exports = {
+  getAllProducts,
+  getProduct,
+  createProduct,
+  updateProduct,
+  deleteProduct,
 };
-
-module.exports = router;

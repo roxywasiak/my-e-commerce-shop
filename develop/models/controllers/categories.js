@@ -133,6 +133,13 @@ const deleteCategory = async (req, res) => {
 }
 };
 
+module.exports = {
+  getAllCategories,
+  getCategory,
+  newCategory,
+  updateCategory,
+  deleteCategory,
+};
 
 
-module.exports = router;
+
