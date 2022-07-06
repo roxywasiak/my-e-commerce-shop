@@ -15,7 +15,7 @@ app.use(routes);
 // sync sequelize models to the database, then turn on the server
 const start = async () => {
   try {
-    await connection.sync();
+    await connection.sync({ force: false });
 
     console.log(`[INFO]: DB connection successful`);
 
