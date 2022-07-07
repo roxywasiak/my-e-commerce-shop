@@ -65,8 +65,8 @@ const newCategory = async (req, res) => {
     const categoryInfo = req.body;
 
     // insert category in the DB
-    const newCategory = await Category.create(category);
-    return res.json(categoryInfo);
+    const newCategory = await Category.create(categoryInfo);
+    return res.json(newCategory);
   } catch (error) {
     console.log(`[ERROR]: Failed to create new category | ${error.message}`);
     return res.status(500).json({ success: false, error: error.message });
@@ -87,7 +87,7 @@ const updateCategory = async (req, res) => {
       // update the book in the DB
       await Category.update(payload, {
         where: {
-          categoryInfo: req.params.id,
+          id: req.params.id,
         },
       });
 
@@ -111,7 +111,7 @@ const deleteCategory = async (req, res) => {
     // delete the book by id from DB
     const categoryInfo = await Category.destroy({
       where: {
-        category_id: req.params.id,
+        id: req.params.id,
       },
     });
     if (!categoryInfo) {

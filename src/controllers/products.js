@@ -51,15 +51,7 @@ const getProduct = async (req, res) => {
 // create new product
 const createProduct = async (req, res) => {
   try {
-    const createProductRequest = {
-      product_name: req.body.productName,
-      price: req.body.price,
-      stock: req.body.stock,
-      tagIds: req.body.tagIds,
-      category_id: req.boy.category_id,
-    };
-
-    const newProduct = await Product.create(createProductRequest);
+    console.log(req.body);
     Product.create(req.body)
       .then((newProduct) => {
         // if there's product tags, we need to create pairings to bulk create in the ProductTag model
