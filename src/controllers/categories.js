@@ -62,10 +62,19 @@ const newCategory = async (req, res) => {
   // create a new category
   try {
     // get new category data from request body
-    const categoryInfo = req.body;
+    const { category_name } = req.body;
 
+    if (!category_name) {
+      return handleError(
+        req,
+        res,
+        "Unable to create a category",
+        undefined,
+        400
+      );
+    }
     // insert category in the DB
-    const newCategory = await Category.create(categoryInfo);
+    const newCategory = await Category.create({ category_name });
     return res.json(newCategory);
   } catch (error) {
     console.log(`[ERROR]: Failed to create new category | ${error.message}`);
