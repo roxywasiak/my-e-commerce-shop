@@ -22,7 +22,7 @@ there are 15 endpoints 5 for each request listed below:
 - GET - find one item by ID
 - POST - create a new item
 - PUT - update an item
-- Delete - destroy a item
+- Delete - destroy an item
 
 ## Technologies 📕
 
@@ -59,6 +59,8 @@ npm run start
 ```
 
 ## Demo Video 📽
+
+Please click [here](https://drive.google.com/file/d/1A0YrUgUslVFA4y8rpdxFp9V6z2dw8MU9/view?usp=sharing)
 
 ## Contact me 👋
 
