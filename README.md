@@ -4,17 +4,17 @@
 
 ## Table of Contents
 
-- [About the Project](#about)
-- [Technologies](#technologies)
-- [Installation](#installation)
-- [Demo video](#demo-video-of-the-application)
-- [Contact me](#contact-me)
+- [About the Project](#about-🧠)
+- [Technologies](#technologies-📕)
+- [Installation](#installation-🔍)
+- [Demo Video](#demo-video-📽)
+- [Contact me](#contact-me-👋)
 
 ## About the project 🧠
 
 As a manager at an internet retail company I want a back end for my e-commerce website that uses the latest technologies so my company can compete with other e-commerce companies.
 
-The e-commerce database consists of 4 tables Ctegory, Product, Tag, Product_Tag(Junction table) which extend the Sequelize model.
+The e-commerce database consists of 4 tables Category, Product, Tag, Product_Tag(Junction table) which extend the Sequelize model.
 
 there are 15 endpoints 5 for each request listed below:
 

@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { Product, Category, Tag, ProductTag } = require("../models");
 
-const PRODUCT_ATTRIBUTES = ["id", "product_name", "price", "stock"];
+const PRODUCT_ATTRIBUTES = ["product_name", "price", "stock", "id"];
 
 // The `/api/products` endpoint
 
@@ -32,7 +32,7 @@ const getProduct = async (req, res) => {
     // be sure to include its associated Products
     const product = await Product.findByPk(req.params.id, {
       attributes: PRODUCT_ATTRIBUTES,
-      include: [{ Category, Tag }],
+      include: [{ model: Category }, { model: Tag }],
     });
 
     if (product) {
